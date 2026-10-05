@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header><p>LOGO</p> <p>Rodrigo</p></header>
+    <main>
+        <section>
+            <div>
+                <p>TOTAL DE CLIENTES</p>
+                <p>4</p>
+            </div>
+            <div>
+                <p>EM NEGOCIAÇÃO</p>
+                <p>{{total_negociacao}}</p>
+            </div>
+            <div>
+                <p>FECHADOS</p>
+                <p>10</p>
+            </div>
+            <div>
+                <p>VALOR TOTAL NEGOCIADO</p>
+                <p>R$ 400.000,00</p>
+            </div>
+        </section>
+        <section>
+            <input type="search" name="busca" id="busca" placeholder="busque clientes">
+            <button>Novo Cliente +</button>
+        </section>
+        <section>
+            <table>
+                <thead>
+                    <th>CLIENTE</th>
+                    <th>CONTATO</th>
+                    <th>VALOR PROPOSTA</th>
+                    <th>STATUS</th>
+                    <th>DATA CADASTRO</th>
+                    <th>AÇÕES</th>
+                </thead>
+                <tbody>
+                    {% for cliente in lista_clientes %}
+                    <tr>
+                        <td>{{cliente.nome}}</td>
+                        <td>{{cliente.telefone}}</td>
+                        <td>R${{cliente.valor_proposta}}</td>
+                        <td>{{cliente.status}}</td>
+                        <td>{{cliente.data_cadastro}}</td>
+                        <td>EXCLUIR</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>
